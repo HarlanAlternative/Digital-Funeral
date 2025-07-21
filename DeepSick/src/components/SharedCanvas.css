@@ -1,0 +1,153 @@
+.shared-canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.shared-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.shared-tool-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-right: 1px solid #eee;
+}
+
+.shared-tool-group:last-child {
+  border-right: none;
+}
+
+.shared-tool-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.shared-tool-button:hover {
+  background-color: #f0f0f0;
+}
+
+.shared-tool-button.active {
+  background-color: #e0e0e0;
+}
+
+/* 刷新按钮动画 */
+.shared-tool-button[title="刷新画布"]:active {
+  transform: rotate(360deg);
+}
+
+.shared-canvas-wrapper {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  background-color: #fff;
+}
+
+.shared-error-message {
+  color: #ff4444;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ffeeee;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Canvas selection styles */
+.canvas-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.new-canvas-input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.new-canvas-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 150px;
+}
+
+.new-canvas-input input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Color picker styles */
+input[type="color"] {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Range input styles */
+input[type="range"] {
+  width: 100px;
+  margin: 0 10px;
+}
+
+/* Tool button icons */
+.shared-tool-button {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .shared-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .shared-tool-group {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+
+  .shared-tool-group:last-child {
+    border-bottom: none;
+  }
+
+  .new-canvas-input input {
+    width: 100%;
+  }
+} 
